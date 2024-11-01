@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style1.css" />
+    <title>Job Seeker Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Job Seeker Login</h1>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            minlength="6"
+          />
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="rememberMe" />
+            Remember Me
+          </label>
+        </div>
+        <button type="button" onclick="login()">Login</button>
+        <div class="form-footer">
+          <p>Don't have an account? <a href="index.html">Register here</a></p>
+          <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
+        </div>
+      </form>
+      <div id="message"></div>
+    </div>
+
+    <div id="resetPasswordModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="toggleResetPassword()">&times;</span>
+        <h2>Reset Password</h2>
+        <p>Please enter your email to receive a password reset link.</p>
+        <div class="form-group">
+          <label for="resetEmail">Email:</label>
+          <input type="email" id="resetEmail" name="resetEmail" required />
+        </div>
+        <button onclick="sendResetLink()">Send Reset Link</button>
+      </div>
+    </div>
+
+    <script src="script1.js"></script>
+  </body>
+</html>
